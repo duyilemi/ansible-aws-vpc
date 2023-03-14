@@ -139,7 +139,7 @@
             gateway_id: "{{NAT_GATEWAY_out.nat_gateway_id}}"
       register: privRT_out
 
-      debug:
+    - debug:
         var: "{{item}}"
       loop:
         - vpcout.vpc.id
