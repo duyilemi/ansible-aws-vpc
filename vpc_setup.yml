@@ -150,7 +150,7 @@
         - privsub2_out.subnet.id
         - privsub3_out.subnet.id
         - igw_out.gateway_id
-        - pubRT_out.route_table_id
+        - pubRT_out.route_table.id
         - NAT_GATEWAY_out.nat_gateway_id
         - privRT_out.route_table.id
 
@@ -163,12 +163,12 @@
         privsub2id: "{{privsub2_out.subnet.id}}"
         privsub3id: "{{privsub3_out.subnet.id}}"
         igwid: "{{igw_out.gateway_id}}"
-        pubRTid: "{{pubRT_out.route_table_id}}"
+        pubRTid: "{{pubRT_out.route_table.id}}"
         NATGATEWAYID: "{{NAT_GATEWAY_out.nat_gateway_id}}"
-        privRTId: "{{privRT_out.route_table_id}}"
+        privRTId: "{{privRT_out.route_table.id}}"
         cacheable: yes
 
     - name: Create Variables Files For VPC output
       copy:
-        content: "vpcid: {{vpcout.vpc.id}} \n pubsub1id: {{pubsub1_out.subnet.id}} \n pubsub2id: {{pubsub2_out.subnet.id}} \n pubsub3id: {{pubsub3_out.subnet.id}} \n pubsub3id: {{pubsub3_out.subnet.id}} \n privsub1id: {{privsub1_out.subnet.id}} \n privsub2id: {{privsub2_out.subnet.id}} \n privsub3id: {{privsub3_out.subnet.id}} \n igwid: {{igw_out.gateway_id}} \n pubRTid: {{pubRT_out.route_table_id}} \n NATGATEWAYID: {{NAT_GATEWAY_out.nat_gateway_id}} \n privRTId: {{privRT_out.route_table_id}} \n"
+        content: "vpcid: {{vpcout.vpc.id}} \n pubsub1id: {{pubsub1_out.subnet.id}} \n pubsub2id: {{pubsub2_out.subnet.id}} \n pubsub3id: {{pubsub3_out.subnet.id}} \n pubsub3id: {{pubsub3_out.subnet.id}} \n privsub1id: {{privsub1_out.subnet.id}} \n privsub2id: {{privsub2_out.subnet.id}} \n privsub3id: {{privsub3_out.subnet.id}} \n igwid: {{igw_out.gateway_id}} \n pubRTid: {{pubRT_out.route_table.id}} \n NATGATEWAYID: {{NAT_GATEWAY_out.nat_gateway_id}} \n privRTId: {{privRT_out.route_table.id}} \n"
         dest: vars/output_vars
