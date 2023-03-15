@@ -20,3 +20,8 @@ zone2: us-east-2b
 zone3: us-east-2c
 
 state: present
+
+# Bastion setup variables
+
+bastion_ami: ami-02238ac43d6385ab3
+MYIP: 102.89.32.235/32
