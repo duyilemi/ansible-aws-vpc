@@ -10,6 +10,9 @@
     - name: Import Vprofile Setup Variable
       include_vars: vars/vpc_output_vars
 
+    - name: Import Vprofile Stack Setup Variable
+      include_vars: vars/vprofile_stack_setup
+
     - name: Create Vprofile EC2 key
       ec2_key:
         name: vprofile-key
