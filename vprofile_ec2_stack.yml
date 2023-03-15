@@ -193,7 +193,7 @@
         listeners:
           - protocol: http
             load_balancer_port: 80
-            instance_ports: 80
+            instance_port: 80
 
     - name: Insert or Update Hosts IP And Name in File provision-stack/group_vars/hostsip
       blockinfile:
