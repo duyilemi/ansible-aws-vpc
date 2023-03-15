@@ -29,7 +29,7 @@
         description: Allow port 80 from Everywhere and All port Within Security Group
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
-        rule:
+        rules:
           - proto: tcp
             from_port: 80
             to_port: 80
@@ -54,3 +54,14 @@
             to_port: 22
             group_id: "{{BastionSGid}}"
       register: vproStackSG_out
+
+    - name: Update Vprofile Stack Security Group to Allow Access From instance In its SG
+      ec2_group:
+        name: vproStack-sg
+        description: Allow port 22 from Everywhere and All port Within Security Group
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{vproStackSG_out.group_id}}"
