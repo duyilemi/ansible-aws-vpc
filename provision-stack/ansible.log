@@ -1,0 +1,112 @@
+2023-03-17 10:31:17,874 p=1406 u=ubuntu n=ansible | PLAY [Generate Artifact, copy artifact and SQL file to files directory] ********
+2023-03-17 10:31:17,891 p=1406 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-03-17 10:31:19,237 p=1406 u=ubuntu n=ansible | ok: [localhost]
+2023-03-17 10:31:19,253 p=1406 u=ubuntu n=ansible | TASK [Install JDK, Maven and Git] **********************************************
+2023-03-17 10:31:29,475 p=1406 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-03-17 10:32:06,644 p=1406 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2023-03-17 10:32:09,014 p=1406 u=ubuntu n=ansible | failed: [localhost] (item=Maven) => {"ansible_loop_var": "item", "changed": false, "item": "Maven", "msg": "No package matching 'Maven' is available"}
+2023-03-17 10:32:09,022 p=1406 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-03-17 10:32:09,022 p=1406 u=ubuntu n=ansible | localhost                  : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-17 10:33:32,826 p=5892 u=ubuntu n=ansible | PLAY [Generate Artifact, copy artifact and SQL file to files directory] ********
+2023-03-17 10:33:32,842 p=5892 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-03-17 10:33:34,199 p=5892 u=ubuntu n=ansible | ok: [localhost]
+2023-03-17 10:33:34,215 p=5892 u=ubuntu n=ansible | TASK [Install JDK, Maven and Git] **********************************************
+2023-03-17 10:33:36,940 p=5892 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-03-17 10:33:39,471 p=5892 u=ubuntu n=ansible | ok: [localhost] => (item=openjdk-8-jdk)
+2023-03-17 10:33:48,594 p=5892 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2023-03-17 10:33:48,606 p=5892 u=ubuntu n=ansible | TASK [Clone source code from github] *******************************************
+2023-03-17 10:33:52,736 p=5892 u=ubuntu n=ansible | changed: [localhost]
+2023-03-17 10:33:52,747 p=5892 u=ubuntu n=ansible | TASK [mvn install command to build artifact] ***********************************
+2023-03-17 10:34:34,040 p=5892 u=ubuntu n=ansible | changed: [localhost]
+2023-03-17 10:34:34,066 p=5892 u=ubuntu n=ansible | TASK [Copy Artifacts to files directory] ***************************************
+2023-03-17 10:34:35,330 p=5892 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2023-03-17 10:34:35,342 p=5892 u=ubuntu n=ansible | TASK [Copy SQL files to files to directory] ************************************
+2023-03-17 10:34:35,798 p=5892 u=ubuntu n=ansible | changed: [localhost]
+2023-03-17 10:34:35,815 p=5892 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-03-17 10:34:35,816 p=5892 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:44:21,151 p=8050 u=ubuntu n=ansible | PLAY [Set ip to host mapping in /etc/hosts file of all the instances in the stack] ***
+2023-03-17 11:44:21,168 p=8050 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-03-17 11:44:22,634 p=8050 u=ubuntu n=ansible | fatal: [app01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.58: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:44:22,651 p=8050 u=ubuntu n=ansible | fatal: [web01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.30: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:44:22,658 p=8050 u=ubuntu n=ansible | fatal: [rmq01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.49: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:44:22,681 p=8050 u=ubuntu n=ansible | fatal: [mc01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.197: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:44:23,099 p=8050 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 11:44:23,980 p=8050 u=ubuntu n=ansible | fatal: [db01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.17: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:44:23,998 p=8050 u=ubuntu n=ansible | TASK [Import VPC setup Variable] ***********************************************
+2023-03-17 11:44:24,013 p=8050 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 11:44:24,023 p=8050 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *************************************
+2023-03-17 11:44:24,409 p=8050 u=ubuntu n=ansible | changed: [cntl]
+2023-03-17 11:44:24,427 p=8050 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-03-17 11:44:24,427 p=8050 u=ubuntu n=ansible | app01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:44:24,427 p=8050 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:44:24,427 p=8050 u=ubuntu n=ansible | db01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:44:24,428 p=8050 u=ubuntu n=ansible | mc01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:44:24,428 p=8050 u=ubuntu n=ansible | rmq01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:44:24,428 p=8050 u=ubuntu n=ansible | web01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:55:41,450 p=8217 u=ubuntu n=ansible | PLAY [Set ip to host mapping in /etc/hosts file of all the instances in the stack] ********************
+2023-03-17 11:55:41,459 p=8217 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************
+2023-03-17 11:55:42,926 p=8217 u=ubuntu n=ansible | fatal: [web01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.30: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:55:42,947 p=8217 u=ubuntu n=ansible | fatal: [app01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.58: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:55:42,970 p=8217 u=ubuntu n=ansible | fatal: [rmq01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.49: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:55:42,993 p=8217 u=ubuntu n=ansible | fatal: [mc01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.197: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:55:43,202 p=8217 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 11:55:44,342 p=8217 u=ubuntu n=ansible | fatal: [db01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.17: Permission denied (publickey).", "unreachable": true}
+2023-03-17 11:55:44,359 p=8217 u=ubuntu n=ansible | TASK [Import VPC setup Variable] **********************************************************************
+2023-03-17 11:55:44,373 p=8217 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 11:55:44,383 p=8217 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ************************************************************
+2023-03-17 11:55:44,760 p=8217 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 11:55:44,778 p=8217 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************
+2023-03-17 11:55:44,778 p=8217 u=ubuntu n=ansible | app01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:55:44,778 p=8217 u=ubuntu n=ansible | cntl                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:55:44,779 p=8217 u=ubuntu n=ansible | db01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:55:44,779 p=8217 u=ubuntu n=ansible | mc01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:55:44,779 p=8217 u=ubuntu n=ansible | rmq01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 11:55:44,779 p=8217 u=ubuntu n=ansible | web01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:14:12,400 p=8492 u=ubuntu n=ansible | PLAY [Set ip to host mapping in /etc/hosts file of all the instances in the stack] ********************
+2023-03-17 12:14:12,409 p=8492 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************
+2023-03-17 12:14:13,876 p=8492 u=ubuntu n=ansible | fatal: [web01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.30: Permission denied (publickey).", "unreachable": true}
+2023-03-17 12:14:13,900 p=8492 u=ubuntu n=ansible | fatal: [app01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.58: Permission denied (publickey).", "unreachable": true}
+2023-03-17 12:14:13,925 p=8492 u=ubuntu n=ansible | fatal: [rmq01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.49: Permission denied (publickey).", "unreachable": true}
+2023-03-17 12:14:13,953 p=8492 u=ubuntu n=ansible | fatal: [mc01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.197: Permission denied (publickey).", "unreachable": true}
+2023-03-17 12:14:14,163 p=8492 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 12:14:15,290 p=8492 u=ubuntu n=ansible | fatal: [db01]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Load key \"ec2key_pair.pem\": Permission denied\r\nubuntu@172.20.4.17: Permission denied (publickey).", "unreachable": true}
+2023-03-17 12:14:15,307 p=8492 u=ubuntu n=ansible | TASK [Import VPC setup Variable] **********************************************************************
+2023-03-17 12:14:15,322 p=8492 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 12:14:15,331 p=8492 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ************************************************************
+2023-03-17 12:14:15,718 p=8492 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 12:14:15,735 p=8492 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************
+2023-03-17 12:14:15,736 p=8492 u=ubuntu n=ansible | app01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:14:15,736 p=8492 u=ubuntu n=ansible | cntl                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:14:15,736 p=8492 u=ubuntu n=ansible | db01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:14:15,737 p=8492 u=ubuntu n=ansible | mc01                       : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:14:15,737 p=8492 u=ubuntu n=ansible | rmq01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:14:15,737 p=8492 u=ubuntu n=ansible | web01                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:21:31,939 p=8680 u=ubuntu n=ansible | PLAY [Set ip to host mapping in /etc/hosts file of all the instances in the stack] ********************
+2023-03-17 12:21:31,948 p=8680 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************
+2023-03-17 12:21:33,894 p=8680 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 12:21:33,913 p=8680 u=ubuntu n=ansible | ok: [web01]
+2023-03-17 12:21:34,592 p=8680 u=ubuntu n=ansible | ok: [mc01]
+2023-03-17 12:21:34,779 p=8680 u=ubuntu n=ansible | ok: [app01]
+2023-03-17 12:21:34,797 p=8680 u=ubuntu n=ansible | ok: [rmq01]
+2023-03-17 12:21:36,267 p=8680 u=ubuntu n=ansible | ok: [db01]
+2023-03-17 12:21:36,284 p=8680 u=ubuntu n=ansible | TASK [Import VPC setup Variable] **********************************************************************
+2023-03-17 12:21:36,333 p=8680 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 12:21:36,354 p=8680 u=ubuntu n=ansible | ok: [web01]
+2023-03-17 12:21:36,377 p=8680 u=ubuntu n=ansible | ok: [app01]
+2023-03-17 12:21:36,398 p=8680 u=ubuntu n=ansible | ok: [rmq01]
+2023-03-17 12:21:36,399 p=8680 u=ubuntu n=ansible | ok: [mc01]
+2023-03-17 12:21:36,409 p=8680 u=ubuntu n=ansible | ok: [db01]
+2023-03-17 12:21:36,417 p=8680 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ************************************************************
+2023-03-17 12:21:37,245 p=8680 u=ubuntu n=ansible | changed: [web01]
+2023-03-17 12:21:37,246 p=8680 u=ubuntu n=ansible | changed: [rmq01]
+2023-03-17 12:21:37,247 p=8680 u=ubuntu n=ansible | changed: [mc01]
+2023-03-17 12:21:37,247 p=8680 u=ubuntu n=ansible | changed: [app01]
+2023-03-17 12:21:37,302 p=8680 u=ubuntu n=ansible | ok: [cntl]
+2023-03-17 12:21:37,565 p=8680 u=ubuntu n=ansible | changed: [db01]
+2023-03-17 12:21:37,582 p=8680 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************
+2023-03-17 12:21:37,583 p=8680 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:21:37,583 p=8680 u=ubuntu n=ansible | cntl                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:21:37,583 p=8680 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:21:37,584 p=8680 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:21:37,584 p=8680 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-17 12:21:37,584 p=8680 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
