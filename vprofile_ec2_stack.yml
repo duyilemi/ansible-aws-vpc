@@ -42,7 +42,7 @@
     - name: Create Security Group For Vprofile Stack
       ec2_group:
         name: vproStack-sg
-        description: Allow port 22 from Everywhere and All port Within Security Group
+        description: Allow port 22 from Bastion Security Group and port 80 from Load Balancer Security Group
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         purge_rules: no
