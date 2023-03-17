@@ -11,7 +11,7 @@
       loop:
         - git
         - openjdk-8-jdk
-        - Maven
+        - maven
 
     - name: Clone source code from github
       git:
