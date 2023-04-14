@@ -1,7 +1,7 @@
-vpc_name: 'Vprofile-vpc'
+vpc_name: "Vprofile-vpc"
 
 # VPC Range
-vpcCidr: '172.20.0.0/16'
+vpcCidr: "172.20.0.0/16"
 
 # Subnet Range
 PubSub1Cidr: 172.20.1.0/24
@@ -24,4 +24,4 @@ state: present
 # Bastion setup variables
 
 bastion_ami: ami-02238ac43d6385ab3
-MYIP: 197.210.29.229/32
+MYIP: 0.0.0.0/32
