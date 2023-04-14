@@ -71,7 +71,7 @@
 
     - name: Creating Nginx web01
       ec2:
-        key_name: vprofile-key
+        key_name: ec2key_pair
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{nginx_ami}}"
@@ -92,7 +92,7 @@
 
     - name: Creating tomcat app01
       ec2:
-        key_name: vprofile-key
+        key_name: ec2key_pair
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{tomcat_ami}}"
@@ -113,7 +113,7 @@
 
     - name: Creating memcache mc01
       ec2:
-        key_name: vprofile-key
+        key_name: ec2key_pair
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{memcache_ami}}"
@@ -134,7 +134,7 @@
 
     - name: Creating RabbitMQ rmq01
       ec2:
-        key_name: vprofile-key
+        key_name: ec2key_pair
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{rmq_ami}}"
@@ -155,7 +155,7 @@
 
     - name: Creating MySQL db01
       ec2:
-        key_name: vprofile-key
+        key_name: ec2key_pair
         region: "{{region}}"
         instance_type: t2.micro
         image: "{{mysql_ami}}"
