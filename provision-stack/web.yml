@@ -12,7 +12,7 @@
       tags:
         - package
 
-    - name: Start & ENable Nginx
+    - name: Start & enable Nginx
       service:
         name: nginx
         state: started
